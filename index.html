@@ -1,0 +1,1363 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>先锋影视资源站 | 官方网站 - 高清正版影视内容生态平台</title>
+<meta name="description" content="先锋影视资源站官方网站，专注高清正版影视资源聚合与原创内容生态建设，为创作者与观众提供专业、可信赖的影视内容平台。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23111827'/%3E%3Cpath d='M26 20l20 12-20 12z' fill='%23f97316'/%3E%3C/svg%3E">
+<style>
+:root{
+  --xf-bg:#0b1020;
+  --xf-panel:#121a30;
+  --xf-panel-2:#18223c;
+  --xf-line:#26314f;
+  --xf-ink:#eef2ff;
+  --xf-muted:#9aa7c7;
+  --xf-accent:#f97316;
+  --xf-accent-2:#22d3ee;
+  --xf-ok:#34d399;
+  --xf-radius:14px;
+  --xf-max:1180px;
+  --xf-head-h:112px;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-padding-top:var(--xf-head-h);}
+body{
+  margin:0;
+  background:radial-gradient(1200px 600px at 80% -10%,#1b2a4d 0%,transparent 60%),var(--xf-bg);
+  color:var(--xf-ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Helvetica Neue",Arial,sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+img{max-width:100%;display:block;}
+a{color:inherit;text-decoration:none;}
+h1,h2,h3,h4{margin:0 0 .6em;line-height:1.3;}
+p{margin:0 0 1em;}
+ul{margin:0;padding:0;list-style:none;}
+
+/* ===== 吸顶：公告条 + 页头 ===== */
+.xf-sticky-wrap{position:sticky;top:0;z-index:80;}
+.xf-announce{
+  background:linear-gradient(90deg,#f97316,#f43f5e 55%,#a855f7);
+  color:#fff;font-size:13.5px;
+}
+.xf-announce-inner{
+  max-width:var(--xf-max);margin:0 auto;padding:8px 20px;
+  display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.xf-announce strong{color:#fff3c4;}
+.xf-announce .xf-announce-tag{
+  background:rgba(0,0,0,.28);border-radius:99px;padding:1px 9px;
+  font-size:12px;letter-spacing:.5px;white-space:nowrap;
+}
+.xf-header{background:rgba(11,16,32,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--xf-line);}
+.xf-header-inner{
+  max-width:var(--xf-max);margin:0 auto;padding:12px 20px;
+  display:flex;align-items:center;gap:18px;
+}
+.xf-brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:19px;letter-spacing:.5px;white-space:nowrap;}
+.xf-brand-mark{
+  width:36px;height:36px;border-radius:10px;flex:0 0 auto;
+  background:linear-gradient(135deg,var(--xf-accent),#f43f5e);
+  display:grid;place-items:center;color:#fff;font-size:16px;
+}
+.xf-brand small{display:block;font-size:11px;color:var(--xf-muted);font-weight:400;letter-spacing:1px;}
+.xf-nav{margin-left:auto;display:flex;gap:4px;align-items:center;}
+.xf-nav a{
+  padding:8px 12px;border-radius:9px;font-size:14.5px;color:var(--xf-muted);
+  transition:.2s;white-space:nowrap;
+}
+.xf-nav a:hover,.xf-nav a:focus-visible{color:#fff;background:var(--xf-panel-2);outline:none;}
+.xf-search{position:relative;display:flex;align-items:center;}
+.xf-search input{
+  width:196px;background:var(--xf-panel);border:1px solid var(--xf-line);border-radius:10px;
+  color:var(--xf-ink);padding:8px 12px;font-size:14px;font-family:inherit;
+}
+.xf-search input::placeholder{color:#6d7ba0;}
+.xf-search input:focus{outline:2px solid var(--xf-accent-2);outline-offset:1px;}
+.xf-search-hint{
+  position:absolute;top:calc(100% + 8px);right:0;left:auto;width:280px;
+  background:var(--xf-panel-2);border:1px solid var(--xf-line);border-radius:12px;
+  padding:10px 12px;font-size:13px;color:var(--xf-muted);
+  box-shadow:0 18px 40px rgba(0,0,0,.45);display:none;
+}
+.xf-search-hint.xf-show{display:block;}
+.xf-search-hint b{color:var(--xf-accent);}
+.xf-burger{
+  display:none;background:var(--xf-panel);border:1px solid var(--xf-line);color:var(--xf-ink);
+  border-radius:10px;padding:8px 11px;font-size:16px;cursor:pointer;
+}
+
+/* ===== 通用容器 ===== */
+.xf-wrap{max-width:var(--xf-max);margin:0 auto;padding:0 20px;}
+.xf-section{padding:56px 0;}
+.xf-section-head{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:26px;}
+.xf-section-head h2{font-size:clamp(22px,2.6vw,30px);margin:0;}
+.xf-kicker{
+  display:inline-flex;align-items:center;gap:7px;font-size:12.5px;letter-spacing:2px;
+  color:var(--xf-accent-2);text-transform:uppercase;margin-bottom:8px;
+}
+.xf-kicker::before{content:"";width:22px;height:2px;background:var(--xf-accent);}
+.xf-sub{color:var(--xf-muted);font-size:14.5px;max-width:640px;margin:0;}
+.xf-btn{
+  display:inline-flex;align-items:center;gap:8px;border-radius:10px;padding:10px 18px;
+  font-size:14.5px;font-weight:600;border:1px solid transparent;cursor:pointer;
+  font-family:inherit;transition:.2s;
+}
+.xf-btn-primary{background:linear-gradient(135deg,var(--xf-accent),#ef4444);color:#fff;}
+.xf-btn-primary:hover{filter:brightness(1.1);transform:translateY(-1px);}
+.xf-btn-ghost{background:transparent;border-color:var(--xf-line);color:var(--xf-ink);}
+.xf-btn-ghost:hover{border-color:var(--xf-accent-2);color:var(--xf-accent-2);}
+
+/* ===== 首屏：左文右侧大图 + 数据条 ===== */
+.xf-hero{padding:64px 0 48px;position:relative;overflow:hidden;}
+.xf-hero::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(600px 340px at 85% 20%,rgba(34,211,238,.14),transparent 70%);
+}
+.xf-hero-grid{
+  display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);
+  gap:44px;align-items:center;position:relative;
+}
+.xf-hero h1{font-size:clamp(30px,4.6vw,54px);letter-spacing:1px;margin-bottom:18px;}
+.xf-hero h1 span{
+  background:linear-gradient(120deg,var(--xf-accent),#fbbf24 70%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.xf-hero-lead{font-size:16.5px;color:#c9d4ee;max-width:520px;}
+.xf-hero-desc{color:var(--xf-muted);font-size:14.8px;max-width:540px;}
+.xf-hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin:22px 0 26px;}
+.xf-hero-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;max-width:560px;}
+.xf-stat{
+  background:rgba(18,26,48,.72);border:1px solid var(--xf-line);border-radius:12px;
+  padding:14px 16px;
+}
+.xf-stat b{display:block;font-size:24px;color:var(--xf-accent-2);letter-spacing:.5px;}
+.xf-stat span{font-size:12.5px;color:var(--xf-muted);}
+.xf-hero-art{
+  border-radius:20px;overflow:hidden;border:1px solid var(--xf-line);
+  box-shadow:0 30px 70px rgba(0,0,0,.5);position:relative;
+}
+.xf-hero-art img{width:100%;height:100%;aspect-ratio:4/3;object-fit:cover;}
+.xf-hero-art figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:14px 16px;font-size:13px;
+  color:#dbe4ff;background:linear-gradient(transparent,rgba(5,8,18,.9));
+}
+
+/* ===== 关键词深度解析 ===== */
+.xf-about{background:linear-gradient(180deg,rgba(18,26,48,.6),transparent);border-top:1px solid var(--xf-line);border-bottom:1px solid var(--xf-line);}
+.xf-about-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.35fr);gap:40px;align-items:start;}
+.xf-about-card{
+  background:var(--xf-panel);border:1px solid var(--xf-line);border-radius:var(--xf-radius);
+  padding:24px;position:sticky;top:var(--xf-head-h); 
+}
+.xf-about-card h3{font-size:18px;}
+.xf-about-card ul{display:grid;gap:10px;margin-top:12px;}
+.xf-about-card li{font-size:14px;color:var(--xf-muted);padding-left:18px;position:relative;}
+.xf-about-card li::before{content:"▹";position:absolute;left:0;color:var(--xf-accent);}
+.xf-prose h3{font-size:18.5px;color:#e6ecff;margin-top:28px;}
+.xf-prose h3:first-child{margin-top:0;}
+.xf-prose p{font-size:15px;color:#c2cde8;}
+.xf-prose p strong{color:var(--xf-accent-2);font-weight:600;}
+
+/* ===== 焦点内容：一幅重点大图 + 文字列表 ===== */
+.xf-focus-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:32px;align-items:start;}
+.xf-focus-main{
+  background:var(--xf-panel);border:1px solid var(--xf-line);border-radius:18px;overflow:hidden;
+  transition:.25s;
+}
+.xf-focus-main:hover{transform:translateY(-3px);border-color:#3a4a75;}
+.xf-focus-main img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+.xf-focus-body{padding:20px 22px 22px;}
+.xf-tag{
+  display:inline-block;font-size:12px;padding:2px 9px;border-radius:99px;
+  background:rgba(34,211,238,.13);color:var(--xf-accent-2);border:1px solid rgba(34,211,238,.3);
+  margin:0 6px 6px 0;
+}
+.xf-tag-warm{background:rgba(249,115,22,.14);color:#fdba74;border-color:rgba(249,115,22,.35);}
+.xf-focus-body h3{font-size:20px;margin:8px 0 8px;}
+.xf-focus-body p{color:var(--xf-muted);font-size:14.2px;}
+.xf-meta{display:flex;flex-wrap:wrap;gap:14px;font-size:12.8px;color:#8494b8;margin-top:10px;}
+.xf-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px;}
+.xf-act{
+  display:inline-flex;align-items:center;gap:6px;font-size:13px;font-family:inherit;
+  background:var(--xf-panel-2);border:1px solid var(--xf-line);color:#c9d4ee;
+  border-radius:9px;padding:6px 12px;cursor:pointer;transition:.18s;
+}
+.xf-act:hover{border-color:var(--xf-accent-2);color:#fff;}
+.xf-act.xf-on{background:rgba(249,115,22,.16);border-color:var(--xf-accent);color:#fdba74;}
+.xf-focus-list{display:grid;gap:14px;}
+.xf-focus-item{
+  display:grid;grid-template-columns:64px minmax(0,1fr);gap:14px;align-items:start;
+  background:var(--xf-panel);border:1px solid var(--xf-line);border-radius:12px;padding:14px 16px;
+  transition:.2s;
+}
+.xf-focus-item:hover{border-color:#3a4a75;transform:translateX(3px);}
+.xf-focus-num{
+  font-size:20px;font-weight:700;color:var(--xf-accent);
+  border-right:1px solid var(--xf-line);padding-right:12px;line-height:1.2;
+}
+.xf-focus-item h4{font-size:15.5px;margin:0 0 4px;}
+.xf-focus-item p{font-size:13.2px;color:var(--xf-muted);margin:0 0 6px;}
+
+/* ===== 视频流：两列图文卡片 ===== */
+.xf-video-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;}
+.xf-video-card{
+  background:var(--xf-panel);border:1px solid var(--xf-line);border-radius:16px;overflow:hidden;
+  display:flex;flex-direction:column;transition:.22s;
+}
+.xf-video-card:hover{transform:translateY(-4px);border-color:#3a4a75;box-shadow:0 22px 44px rgba(0,0,0,.42);}
+.xf-video-thumb{position:relative;}
+.xf-video-thumb img{width:100%;aspect-ratio:16/9;object-fit:cover;}
+.xf-play{
+  position:absolute;inset:0;display:grid;place-items:center;
+  background:rgba(5,8,18,.18);transition:.2s;
+}
+.xf-video-card:hover .xf-play{background:rgba(5,8,18,.34);}
+.xf-play span{
+  width:48px;height:48px;border-radius:50%;background:rgba(249,115,22,.92);
+  display:grid;place-items:center;color:#fff;font-size:17px;padding-left:3px;
+}
+.xf-video-body{padding:16px 18px 18px;display:flex;flex-direction:column;flex:1;}
+.xf-video-body h3{font-size:16.5px;margin:0 0 8px;}
+.xf-video-body p{font-size:13.5px;color:var(--xf-muted);margin:0 0 10px;}
+.xf-video-foot{display:flex;flex-wrap:wrap;gap:12px;font-size:12.4px;color:#8494b8;margin-top:auto;padding-top:8px;}
+.xf-video-foot .xf-author-chip{color:#c9d4ee;}
+
+/* ===== 时间线故事 ===== */
+.xf-timeline{position:relative;padding-left:28px;display:grid;gap:22px;}
+.xf-timeline::before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--xf-accent),var(--xf-accent-2));}
+.xf-tl-item{position:relative;background:var(--xf-panel);border:1px solid var(--xf-line);border-radius:12px;padding:16px 18px;}
+.xf-tl-item::before{
+  content:"";position:absolute;left:-27px;top:22px;width:12px;height:12px;border-radius:50%;
+  background:var(--xf-bg);border:2px solid var(--xf-accent);
+}
+.xf-tl-item b{color:var(--xf-accent-2);font-size:13px;letter-spacing:1px;}
+.xf-tl-item h3{font-size:16.5px;margin:6px 0 6px;}
+.xf-tl-item p{font-size:13.8px;color:var(--xf-muted);margin:0;}
+
+/* ===== 专题企划（杂志编排） ===== */
+.xf-topic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;}
+.xf-topic{
+  background:linear-gradient(170deg,var(--xf-panel-2),var(--xf-panel));
+  border:1px solid var(--xf-line);border-radius:16px;padding:20px;display:flex;flex-direction:column;
+}
+.xf-topic .xf-status{
+  font-size:12px;color:var(--xf-ok);border:1px solid rgba(52,211,153,.35);
+  background:rgba(52,211,153,.1);border-radius:99px;padding:2px 9px;align-self:flex-start;margin-bottom:10px;
+}
+.xf-topic h3{font-size:17px;margin:0 0 8px;}
+.xf-topic>p{font-size:13.4px;color:var(--xf-muted);}
+.xf-topic ul{display:grid;gap:8px;margin-top:auto;padding-top:12px;border-top:1px dashed var(--xf-line);}
+.xf-topic li{font-size:13px;color:#c2cde8;padding-left:16px;position:relative;}
+.xf-topic li::before{content:"›";position:absolute;left:2px;color:var(--xf-accent);}
+
+/* ===== 作者矩阵：双列简介 ===== */
+.xf-author-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;}
+.xf-author{
+  display:grid;grid-template-columns:60px minmax(0,1fr);gap:16px;
+  background:var(--xf-panel);border:1px solid var(--xf-line);border-radius:14px;padding:18px;
+  transition:.2s;cursor:pointer;
+}
+.xf-author:hover{border-color:var(--xf-accent-2);}
+.xf-avatar{
+  width:60px;height:60px;border-radius:50%;display:grid;place-items:center;
+  font-size:21px;font-weight:700;color:#06101f;
+}
+.xf-author h3{font-size:16px;margin:0 0 4px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
+.xf-author .xf-field{font-size:12px;color:var(--xf-accent-2);margin-bottom:6px;}
+.xf-author p{font-size:13.2px;color:var(--xf-muted);margin:0;}
+.xf-author-stats{display:flex;gap:14px;font-size:12.2px;color:#8494b8;margin-top:8px;}
+
+/* ===== 评价：双列短评 ===== */
+.xf-review-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;}
+.xf-review{
+  background:var(--xf-panel);border:1px solid var(--xf-line);border-left:3px solid var(--xf-accent);
+  border-radius:12px;padding:16px 18px;
+}
+.xf-review p{font-size:13.8px;color:#cfd8ef;margin:0 0 10px;}
+.xf-review-who{display:flex;align-items:center;gap:9px;font-size:12.6px;color:#8494b8;}
+.xf-review-ava{width:26px;height:26px;border-radius:50%;display:grid;place-items:center;font-size:12px;color:#06101f;font-weight:700;}
+.xf-stars{color:#fbbf24;font-size:12.5px;letter-spacing:2px;margin-bottom:6px;}
+
+/* ===== 榜单数据 ===== */
+.xf-rank{display:grid;gap:10px;}
+.xf-rank-row{
+  display:grid;grid-template-columns:44px minmax(0,1fr) 110px 90px;gap:12px;align-items:center;
+  background:var(--xf-panel);border:1px solid var(--xf-line);border-radius:11px;padding:12px 16px;
+  transition:.2s;
+}
+.xf-rank-row:hover{border-color:#3a4a75;}
+.xf-rank-no{font-weight:700;color:var(--xf-accent-2);font-size:15px;}
+.xf-rank-row h4{font-size:14.6px;margin:0;font-weight:600;}
+.xf-rank-row .xf-rank-sub{font-size:12.4px;color:var(--xf-muted);}
+.xf-bar{height:7px;background:var(--xf-panel-2);border-radius:99px;overflow:hidden;}
+.xf-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--xf-accent),#fbbf24);border-radius:99px;}
+.xf-rank-val{font-size:12.8px;color:#8494b8;text-align:right;}
+
+/* ===== FAQ ===== */
+.xf-faq{display:grid;gap:10px;}
+.xf-faq details{
+  background:var(--xf-panel);border:1px solid var(--xf-line);border-radius:11px;padding:0 16px;
+}
+.xf-faq summary{
+  cursor:pointer;padding:14px 0;font-size:14.8px;font-weight:600;list-style:none;
+  display:flex;justify-content:space-between;gap:12px;align-items:center;
+}
+.xf-faq summary::-webkit-details-marker{display:none;}
+.xf-faq summary::after{content:"+";color:var(--xf-accent);font-size:18px;}
+.xf-faq details[open] summary::after{content:"−";}
+.xf-faq details p{font-size:13.6px;color:var(--xf-muted);padding-bottom:14px;margin:0;}
+
+/* ===== 企业动态 ===== */
+.xf-news{display:grid;gap:12px;}
+.xf-news-item{
+  display:grid;grid-template-columns:88px minmax(0,1fr);gap:16px;
+  background:var(--xf-panel);border:1px solid var(--xf-line);border-radius:11px;padding:14px 16px;
+}
+.xf-news-item time{font-size:12.5px;color:var(--xf-accent-2);letter-spacing:.5px;}
+.xf-news-item h3{font-size:15px;margin:0 0 4px;}
+.xf-news-item p{font-size:13.2px;color:var(--xf-muted);margin:0;}
+
+/* ===== 合作墙 ===== */
+.xf-partners{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;}
+.xf-partner{
+  background:var(--xf-panel);border:1px dashed var(--xf-line);border-radius:11px;
+  padding:16px;text-align:center;font-size:13.5px;color:#c2cde8;
+}
+.xf-partner b{display:block;color:var(--xf-accent-2);font-size:15px;margin-bottom:4px;}
+.xf-partner span{font-size:12px;color:#7d8cb0;}
+
+/* ===== 页脚 ===== */
+.xf-footer{border-top:1px solid var(--xf-line);background:#080d1a;padding:44px 0 26px;margin-top:20px;}
+.xf-foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:28px;}
+.xf-foot-grid h4{font-size:14.5px;color:#e6ecff;margin-bottom:12px;}
+.xf-foot-grid li{font-size:13.2px;color:#8494b8;margin-bottom:8px;}
+.xf-foot-grid li a:hover{color:var(--xf-accent-2);}
+.xf-foot-bottom{
+  border-top:1px solid var(--xf-line);margin-top:30px;padding-top:18px;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:12.6px;color:#6d7ba0;
+}
+
+/* ===== 弹窗 / Toast ===== */
+.xf-modal{
+  position:fixed;inset:0;z-index:200;display:none;align-items:center;justify-content:center;
+  background:rgba(4,7,15,.72);padding:20px;
+}
+.xf-modal.xf-show{display:flex;}
+.xf-modal-box{
+  background:var(--xf-panel-2);border:1px solid var(--xf-line);border-radius:16px;
+  max-width:520px;width:100%;padding:24px;position:relative;max-height:82vh;overflow:auto;
+}
+.xf-modal-box h3{margin-top:0;}
+.xf-modal-close{
+  position:absolute;top:12px;right:12px;background:transparent;border:none;color:#9aa7c7;
+  font-size:20px;cursor:pointer;line-height:1;
+}
+.xf-modal-box textarea,.xf-modal-box input{
+  width:100%;background:var(--xf-panel);border:1px solid var(--xf-line);border-radius:9px;
+  color:var(--xf-ink);padding:10px 12px;font-family:inherit;font-size:14px;margin-bottom:12px;
+}
+.xf-modal-box textarea{min-height:96px;resize:vertical;}
+.xf-toast{
+  position:fixed;left:50%;bottom:30px;transform:translate(-50%,20px);z-index:300;
+  background:#1c2846;border:1px solid var(--xf-accent);color:#fff;padding:10px 20px;
+  border-radius:99px;font-size:13.5px;opacity:0;pointer-events:none;transition:.25s;
+}
+.xf-toast.xf-show{opacity:1;transform:translate(-50%,0);}
+.xf-top{
+  position:fixed;right:20px;bottom:24px;z-index:120;width:44px;height:44px;border-radius:12px;
+  background:var(--xf-accent);color:#fff;border:none;font-size:18px;cursor:pointer;
+  display:none;place-items:center;box-shadow:0 10px 26px rgba(249,115,22,.4);
+}
+.xf-top.xf-show{display:grid;}
+
+/* ===== 响应式 ===== */
+@media (max-width:960px){
+  :root{--xf-head-h:104px;}
+  .xf-hero-grid,.xf-about-grid,.xf-focus-grid{grid-template-columns:1fr;}
+  .xf-topic-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+  .xf-foot-grid{grid-template-columns:1fr 1fr;}
+  .xf-about-card{position:static;}
+}
+@media (max-width:760px){
+  .xf-nav{
+    display:none;position:absolute;left:0;right:0;top:100%;background:var(--xf-panel);
+    border-bottom:1px solid var(--xf-line);flex-direction:column;align-items:stretch;padding:10px 16px 16px;
+  }
+  .xf-nav.xf-open{display:flex;}
+  .xf-header-inner{position:relative;flex-wrap:wrap;}
+  .xf-burger{display:block;margin-left:auto;order:2;}
+  .xf-search{order:3;width:100%;}
+  .xf-search input{width:100%;}
+  .xf-search-hint{width:100%;left:0;right:0;}
+  .xf-nav a{padding:11px 8px;}
+  .xf-video-grid,.xf-author-grid,.xf-review-grid{grid-template-columns:1fr;}
+  .xf-hero-stats{grid-template-columns:1fr;}
+  .xf-topic-grid{grid-template-columns:1fr;}
+  .xf-rank-row{grid-template-columns:36px minmax(0,1fr);}
+  .xf-rank-row .xf-bar,.xf-rank-val{display:none;}
+  .xf-partners{grid-template-columns:1fr 1fr;}
+  .xf-news-item{grid-template-columns:1fr;gap:4px;}
+  .xf-foot-grid{grid-template-columns:1fr;}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<!-- ===== S1 公告条 + 页头 ===== -->
+<div class="xf-sticky-wrap">
+  <div class="xf-announce">
+    <div class="xf-announce-inner">
+      <span class="xf-announce-tag">官方发布</span>
+      <span>新增「冬季城市影像特辑」42 部高清片目 · <strong>11/22 上线《街角十二时》导演剪辑版</strong></span>
+      <span>·</span>
+      <span>创作者投稿通道同步开放，本期主题「我镜头里的老手艺」</span>
+    </div>
+  </div>
+  <header class="xf-header">
+    <div class="xf-header-inner">
+      <div class="xf-brand">
+        <span class="xf-brand-mark">▶</span>
+        <span>先锋影视资源站<small>官方 · 高清正版影视内容生态</small></span>
+      </div>
+      <button class="xf-burger" id="xfBurger" aria-label="展开导航" aria-expanded="false">☰</button>
+      <nav class="xf-nav" id="xfNav" aria-label="主导航">
+        <a href="#xfFocus">焦点内容</a>
+        <a href="#xfVideos">视频精选</a>
+        <a href="#xfMedia">专题企划</a>
+        <a href="#xfAuthors">创作者</a>
+        <a href="#xfReviews">用户评价</a>
+        <a href="#xfAbout">关键词解析</a>
+        <a href="#xfFaq">常见问题</a>
+      </nav>
+      <div class="xf-search">
+        <input type="search" id="xfSearch" placeholder="搜索片目、专题或创作者…" autocomplete="off" aria-label="站内搜索">
+        <div class="xf-search-hint" id="xfSearchHint" role="status" aria-live="polite"></div>
+      </div>
+    </div>
+  </header>
+</div>
+
+<main>
+
+<!-- ===== S2 品牌首屏：左文右侧大图 + 数据条 ===== -->
+<section class="xf-hero xf-wrap" aria-labelledby="xfHeroTitle">
+  <div class="xf-hero-grid">
+    <div>
+      <span class="xf-kicker">Pioneer Film &amp; Video</span>
+      <h1 id="xfHeroTitle">先锋影视资源站 <span>官方网站</span></h1>
+      <p class="xf-hero-lead">一处为影像而生的内容平台：把好看的、难得的、值得反复观看的作品，收进一个干净的入口。</p>
+      <p class="xf-hero-desc">先锋影视资源站是面向创作者与影视爱好者的企业级内容平台，深耕高清正版影视聚合与原创影像产出。我们以专业策展、透明片单与社区共建的方式，持续运营精品内容生态，让每一部被认真对待的作品，都有机会被更多人看见。</p>
+      <div class="xf-hero-actions">
+        <button class="xf-btn xf-btn-primary" data-xf-open="submit">投稿 / 上传作品</button>
+        <a class="xf-btn xf-btn-ghost" href="#xfVideos">浏览精选片目</a>
+        <button class="xf-btn xf-btn-ghost" data-xf-open="share">分享给同好</button>
+      </div>
+      <div class="xf-hero-stats">
+        <div class="xf-stat"><b data-xf-count="12860">0</b><span>入库高清片目</span></div>
+        <div class="xf-stat"><b data-xf-count="426">0</b><span>签约与入驻创作者</span></div>
+        <div class="xf-stat"><b data-xf-count="97">0</b><span>月度内容满意度 %</span></div>
+      </div>
+    </div>
+    <figure class="xf-hero-art">
+      <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='g1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230d1730'/%3E%3Cstop offset='0.55' stop-color='%231c2b55'/%3E%3Cstop offset='1' stop-color='%23312a5e'/%3E%3C/linearGradient%3E%3ClinearGradient id='g2' x1='0' y1='0' x2='1' y2='0'%3E%3Cstop offset='0' stop-color='%23f97316'/%3E%3Cstop offset='1' stop-color='%23fbbf24'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='600' fill='url(%23g1)'/%3E%3Ccircle cx='640' cy='140' r='170' fill='%2322d3ee' opacity='0.12'/%3E%3Ccircle cx='150' cy='470' r='210' fill='%23f97316' opacity='0.10'/%3E%3Crect x='90' y='120' width='420' height='250' rx='16' fill='%230a1226' stroke='%233a4a75' stroke-width='2'/%3E%3Crect x='110' y='140' width='380' height='180' rx='9' fill='%23172545'/%3E%3Cpolygon points='285,205 285,275 350,240' fill='url(%23g2)'/%3E%3Crect x='110' y='336' width='230' height='9' rx='4' fill='%233a4a75'/%3E%3Crect x='110' y='356' width='140' height='7' rx='3' fill='%232c3a60'/%3E%3Crect x='540' y='330' width='180' height='150' rx='12' fill='%23121a30' stroke='%233a4a75' stroke-width='2'/%3E%3Crect x='558' y='350' width='144' height='76' rx='7' fill='%231d2a4c'/%3E%3Cpolygon points='620,372 620,404 646,388' fill='%2322d3ee'/%3E%3Crect x='558' y='440' width='96' height='7' rx='3' fill='%233a4a75'/%3E%3Crect x='90' y='420' width='420' height='120' rx='12' fill='%23121a30' stroke='%233a4a75' stroke-width='2'/%3E%3Crect x='112' y='444' width='62' height='10' rx='5' fill='%23f97316'/%3E%3Crect x='112' y='470' width='300' height='8' rx='4' fill='%232c3a60'/%3E%3Crect x='112' y='492' width='240' height='8' rx='4' fill='%232c3a60'/%3E%3Crect x='112' y='514' width='180' height='8' rx='4' fill='%232c3a60'/%3E%3Ccircle cx='700' cy='500' r='26' fill='none' stroke='%23fbbf24' stroke-width='3' opacity='0.7'/%3E%3C/svg%3E"
+        alt="先锋影视资源站首屏主视觉：深色界面的影视片目播放与片单界面示意" width="800" height="600">
+      <figcaption>先锋影视资源站 · 片目策展界面（官方视觉示意）</figcaption>
+    </figure>
+  </div>
+</section>
+
+<!-- ===== S5 关键词深度解析 ===== -->
+<section class="xf-section xf-about" id="xfAbout">
+  <div class="xf-wrap">
+    <div class="xf-section-head">
+      <div>
+        <span class="xf-kicker">Keyword Insight</span>
+        <h2>为什么“先锋影视资源站”不只是一个片库</h2>
+        <p class="xf-sub">企业简介与关键词深度解析：我们如何理解影视资源、如何对待创作者、如何把平台运营成一件长期的事。</p>
+      </div>
+    </div>
+    <div class="xf-about-grid">
+      <aside class="xf-about-card">
+        <h3>企业名片</h3>
+        <p style="font-size:13.6px;color:#9aa7c7;margin:0;">先锋影视资源站是持续运营的影视内容企业与社区平台，以正版高清片目为基础，以原创影像为延伸。</p>
+        <ul>
+          <li>官网内容全部人工策展，拒绝机器灌水</li>
+          <li>片目来源可追溯，正版与授权信息公示</li>
+          <li>创作者扶持计划常年开放申报</li>
+          <li>品牌口碑来自长期一致的内容标准</li>
+        </ul>
+      </aside>
+      <div class="xf-prose">
+        <h3>一、“影视资源站”在今天应该意味着什么</h3>
+        <p>在很长一段时间里，人们对“影视资源站”的想象停留在“一个能下载到片子”的地方。但当带宽、设备与观影场景都发生变化之后，用户真正的困扰不再是“找不到”，而是“找不到对的”。一部电影可能有十几个版本、几十条切片、上百条二创，观众需要的不只是资源，而是一个值得信赖的筛选与呈现系统。先锋影视资源站官方网站因此把自己定义为“策展型平台”：我们不做无差别堆叠，而是把每一部入库片目当成一件需要被介绍、被注解、被放进上下文的展品。</p>
+        <p>这意味着三件事。第一，<strong>入库门槛</strong>。片目需要经过清晰度、音轨完整性、字幕准确性、版本来源四项核验，任何一项不合格都不进入精选池。第二，<strong>结构化描述</strong>。每部作品都配有题材标签、时长、年代、主创信息与一段不超过二百字的策展短评，让观众在点开之前就知道自己在看什么。第三，<strong>持续更新</strong>。平台按周维护片单，被淘汰的不是“旧片”，而是描述失准、画质落后或授权状态变化的条目。这套机制看起来慢，却让“先锋影视资源站”这个关键词逐渐与“靠谱”绑定在一起。</p>
+        <h3>二、正版与高清：一条不能退让的底线</h3>
+        <p>影视内容的特殊性在于，它同时承载创作劳动与商业价值。平台在成立之初就确立了正版优先原则：公开授权的作品优先入库，合作机构的片目由对方提供版权证明，创作者上传的原创内容需要完成权属声明。我们并不回避现实中版权链条的复杂性，而是通过“来源公示 + 投诉响应 + 快速下架”三层机制来降低风险。用户在片目详情页可以看到来源说明；如发现权属问题，可通过举报反馈通道提交，平台承诺在合理时限内核查处理。</p>
+        <p>高清也不只是分辨率数字。1080P 与 4K 只是技术参数，真正影响观感的还有码率稳定性、音画同步、字幕字体与换行位置。平台的技术团队对上传素材做统一转码规范，尽量避免出现“标着高清、看起来模糊”的情况。对创作者而言，我们把转码建议、封面尺寸、字幕规范整理成公开的投稿攻略，减少反复沟通的成本。这些细节不够浪漫，但它们共同构成了“专业”二字的重量。</p>
+        <h3>三、从资源到社区：内容生态如何形成</h3>
+        <p>如果只有片库，平台会逐渐变成一个冷冰冰的仓库。先锋影视资源站希望形成的是一种内容生态：观众因为片目而来，因为讨论而留下，创作者因为反馈而持续产出。为此，我们把社区功能设计得相对克制——不追求信息流的无限滚动，而是用专题企划、作者专栏、短评与评分来组织讨论。一个专题通常包含三到五条内容，围绕同一主题展开，比如“城市夜行”“手艺人”“老片修复”，让零散的观看行为被串联成一条可阅读的线索。</p>
+        <p>创作者是这条线索上最重要的一环。平台设有创作者名录，展示每位作者的擅长领域、作品数量、关注规模与一段自我介绍。我们鼓励创作者在作品下方回应评论，也鼓励观众给出具体的、有建设性的意见。社区规则明确反对人身攻击与恶意刷评，同时保留“不同意见”的空间——因为真正的口碑不是整齐划一的赞美，而是在争论之后仍然被认可的价值。</p>
+        <h3>四、长期主义：我们如何评估自己的成长</h3>
+        <p>影视行业变化很快，热点的生命周期常常只有几天。平台选择了相对“慢”的路径：稳定的更新节奏、可查证的片目标准、对创作者的分层扶持、对社区氛围的长期维护。我们内部用三个指标观察自身健康度：片目有效率（仍然可播且信息准确的条目占比）、创作者留存率（半年内继续投稿的作者比例）、内容满意度（观众评分与反馈的综合结果）。这三个数字不上热搜，却决定了平台能不能走得更远。</p>
+        <p>“先锋”二字对我们而言不是口号，而是一种姿态：愿意先做验证、先承担成本、先把标准立起来。影视资源的整理是一项艰苦的、需要耐心的工程，它不会有太多掌声，但会让后来者少走弯路。我们相信，当平台把每一件小事做扎实，关键词自然会积累出它应有的分量——这就是先锋影视资源站作为一个企业、一个品牌、一个社区，愿意长期投入的方向。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S3 焦点内容：一幅重点大图 + 文字列表 ===== -->
+<section class="xf-section" id="xfFocus">
+  <div class="xf-wrap">
+    <div class="xf-section-head">
+      <div>
+        <span class="xf-kicker">Editor's Focus</span>
+        <h2>本周焦点 · 值得认真看完的四部</h2>
+        <p class="xf-sub">由策展团队从本周更新的先锋影视资源站片目中选出，兼顾类型差异与观看难度。</p>
+      </div>
+    </div>
+    <div class="xf-focus-grid">
+      <article class="xf-focus-main">
+        <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 450'%3E%3Cdefs%3E%3ClinearGradient id='f1' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%23112033'/%3E%3Cstop offset='1' stop-color='%23322b52'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='800' height='450' fill='url(%23f1)'/%3E%3Crect x='0' y='300' width='800' height='150' fill='%230a1226' opacity='0.85'/%3E%3Ccircle cx='640' cy='110' r='58' fill='%23fbbf24' opacity='0.85'/%3E%3Cpolygon points='0,320 130,210 260,300 400,180 540,290 680,200 800,300 800,450 0,450' fill='%23153047' opacity='0.9'/%3E%3Cpolygon points='0,360 170,280 330,350 500,250 660,340 800,300 800,450 0,450' fill='%230d1e33'/%3E%3Crect x='70' y='80' width='180' height='10' rx='5' fill='%23f97316'/%3E%3Crect x='70' y='104' width='120' height='8' rx='4' fill='%233a4a75'/%3E%3Crect x='70' y='124' width='160' height='8' rx='4' fill='%233a4a75'/%3E%3Cpath d='M0 380 Q200 340 400 380 T800 370' stroke='%2322d3ee' stroke-width='2' fill='none' opacity='0.5'/%3E%3C/svg%3E"
+          alt="焦点作品《街角十二时》城市夜景主视觉海报" width="800" height="450">
+        <div class="xf-focus-body">
+          <span class="xf-tag xf-tag-warm">焦点首映</span><span class="xf-tag">城市探索</span>
+          <h3>《街角十二时》导演剪辑版</h3>
+          <p>一位夜班公交司机与十二位乘客的十二段短暂相遇。导演用固定机位与自然光记录城市凌晨的呼吸，剪辑版补回了两场被删去的长镜头，让整部片子的情绪落点更稳。平台同步上线了主创访谈与分镜手稿。</p>
+          <div class="xf-meta"><span>时长 96 分钟</span><span>4K 高清</span><span>策展评分 9.1</span></div>
+          <div class="xf-actions">
+            <button class="xf-act" data-xf-like="focus1"><span>♥ 喜欢</span> <b data-xf-like-count="1284">1284</b></button>
+            <button class="xf-act" data-xf-fav="focus1">☆ 收藏</button>
+            <button class="xf-act" data-xf-open="share">↗ 分享</button>
+          </div>
+        </div>
+      </article>
+      <div class="xf-focus-list">
+        <article class="xf-focus-item">
+          <div class="xf-focus-num">01</div>
+          <div>
+            <h4>《手艺人·第七季》第一集：修表的第七十年</h4>
+            <p>记录一位在旧城巷口修表七十年的老师傅。镜头克制，几乎没有旁白，靠工具声与老顾客的闲聊撑起时间感。</p>
+            <div class="xf-meta"><span>在地文化</span><span>32 分钟</span><span>策展评分 8.8</span></div>
+          </div>
+        </article>
+        <article class="xf-focus-item">
+          <div class="xf-focus-num">02</div>
+          <div>
+            <h4>《胶片未眠》：老片修复幕后全记录</h4>
+            <p>跟随修复团队进入恒温库房，看一部 1987 年的胶片如何经历清洁、扫描、调色与音轨重建。含修复前后对比片段。</p>
+            <div class="xf-meta"><span>创作幕后</span><span>48 分钟</span><span>策展评分 8.6</span></div>
+          </div>
+        </article>
+        <article class="xf-focus-item">
+          <div class="xf-focus-num">03</div>
+          <div>
+            <h4>《一个人的放映厅》微纪录片合集</h4>
+            <p>五个城市、五位坚持放艺术片的小影院经营者。合集特别收录了策展人对谈，讨论小银幕如何留住观众。</p>
+            <div class="xf-meta"><span>人物访谈</span><span>5 集 · 共 74 分钟</span><span>策展评分 8.9</span></div>
+          </div>
+        </article>
+        <article class="xf-focus-item">
+          <div class="xf-focus-num">04</div>
+          <div>
+            <h4>《冬季城市影像特辑》片单导览</h4>
+            <p>42 部与冬季、城市、夜晚相关的片目按情绪分组：冷冽、温暖、悬疑、孤独。附一份可下载的观看顺序建议。</p>
+            <div class="xf-meta"><span>专题片单</span><span>攻略</span><span>持续更新</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S3 视频流：两列图文卡片 ===== -->
+<section class="xf-section" id="xfVideos" style="padding-top:20px;">
+  <div class="xf-wrap">
+    <div class="xf-section-head">
+      <div>
+        <span class="xf-kicker">Video Picks</span>
+        <h2>视频精选 · 六部值得加入片单的作品</h2>
+        <p class="xf-sub">覆盖日常记录、深度测评、科技前沿与文化访谈，全部为先锋影视资源站官方校验的高清版本。</p>
+      </div>
+    </div>
+    <div class="xf-video-grid">
+
+      <article class="xf-video-card">
+        <div class="xf-video-thumb">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%230f1c33'/%3E%3Crect x='60' y='60' width='240' height='160' rx='8' fill='%231b2a4d' stroke='%233a4a75' stroke-width='2'/%3E%3Crect x='80' y='80' width='200' height='100' rx='4' fill='%2313263f'/%3E%3Cpolygon points='165,110 165,150 195,130' fill='%23f97316'/%3E%3Crect x='80' y='192' width='120' height='8' rx='4' fill='%233a4a75'/%3E%3Crect x='340' y='80' width='240' height='10' rx='5' fill='%2322d3ee' opacity='0.8'/%3E%3Crect x='340' y='106' width='190' height='8' rx='4' fill='%233a4a75'/%3E%3Crect x='340' y='128' width='210' height='8' rx='4' fill='%233a4a75'/%3E%3Crect x='340' y='150' width='150' height='8' rx='4' fill='%233a4a75'/%3E%3Crect x='340' y='188' width='90' height='26' rx='13' fill='%23f97316'/%3E%3Crect x='60' y='260' width='520' height='8' rx='4' fill='%232c3a60'/%3E%3Crect x='60' y='284' width='400' height='8' rx='4' fill='%232c3a60'/%3E%3C/svg%3E"
+            alt="教程视频《一条片子的诞生：从脚本到成片》封面图" width="640" height="360">
+          <div class="xf-play" aria-hidden="true"><span>▶</span></div>
+        </div>
+        <div class="xf-video-body">
+          <span class="xf-tag">教程干货</span><span class="xf-tag">创作幕后</span>
+          <h3>一条片子的诞生：从脚本到成片</h3>
+          <p>用一部八分钟短片的完整流程，讲解脚本拆解、分镜绘制、机位选择与后期节奏。适合刚入门的影像创作者。</p>
+          <div class="xf-video-foot">
+            <span class="xf-author-chip">作者：迟野</span><span>播放 4.2 万</span><span>点赞 3120</span><span>收藏 1890</span>
+          </div>
+          <div class="xf-actions">
+            <button class="xf-act" data-xf-like="v1">♥ 喜欢 <b data-xf-like-count="3120">3120</b></button>
+            <button class="xf-act" data-xf-fav="v1">☆ 收藏</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="xf-video-card">
+        <div class="xf-video-thumb">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%23131a2c'/%3E%3Ccircle cx='500' cy='90' r='46' fill='%23fbbf24' opacity='0.9'/%3E%3Cpolygon points='0,300 120,190 240,270 360,150 480,250 600,180 640,220 640,360 0,360' fill='%231b3b52'/%3E%3Cpolygon points='0,340 140,280 300,330 460,250 640,310 640,360 0,360' fill='%230d1e33'/%3E%3Crect x='50' y='60' width='160' height='10' rx='5' fill='%2322d3ee'/%3E%3Crect x='50' y='84' width='110' height='7' rx='3' fill='%233a4a75'/%3E%3C/svg%3E"
+            alt="深度测评视频《家庭投影与显示器观影体验实测》封面图" width="640" height="360">
+          <div class="xf-play" aria-hidden="true"><span>▶</span></div>
+        </div>
+        <div class="xf-video-body">
+          <span class="xf-tag">深度测评</span><span class="xf-tag">实用技巧</span>
+          <h3>家庭投影与显示器观影体验实测</h3>
+          <p>在同一间暗房中对比三种设备的色彩、亮度与延迟，给出不同预算下的选购建议，并附上片源参数匹配表。</p>
+          <div class="xf-video-foot">
+            <span class="xf-author-chip">作者：周予安</span><span>播放 2.8 万</span><span>点赞 2040</span><span>收藏 1510</span>
+          </div>
+          <div class="xf-actions">
+            <button class="xf-act" data-xf-like="v2">♥ 喜欢 <b data-xf-like-count="2040">2040</b></button>
+            <button class="xf-act" data-xf-fav="v2">☆ 收藏</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="xf-video-card">
+        <div class="xf-video-thumb">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%230e1626'/%3E%3Crect x='90' y='110' width='200' height='140' rx='10' fill='%231d2a4c' stroke='%233a4a75' stroke-width='2'/%3E%3Ccircle cx='140' cy='160' r='22' fill='%23f97316'/%3E%3Crect x='180' y='148' width='80' height='8' rx='4' fill='%233a4a75'/%3E%3Crect x='180' y='166' width='60' height='8' rx='4' fill='%233a4a75'/%3E%3Crect x='120' y='200' width='140' height='7' rx='3' fill='%232c3a60'/%3E%3Crect x='350' y='90' width='210' height='180' rx='10' fill='%23121a30' stroke='%233a4a75' stroke-width='2'/%3E%3Cpath d='M370 230 L410 170 L450 210 L500 140 L540 200' stroke='%2322d3ee' stroke-width='3' fill='none'/%3E%3Ccircle cx='410' cy='170' r='5' fill='%23fbbf24'/%3E%3Ccircle cx='500' cy='140' r='5' fill='%23fbbf24'/%3E%3C/svg%3E"
+            alt="科技前沿视频《修复一部老电影需要多少道工序》封面图" width="640" height="360">
+          <div class="xf-play" aria-hidden="true"><span>▶</span></div>
+        </div>
+        <div class="xf-video-body">
+          <span class="xf-tag">科技前沿</span><span class="xf-tag">知识科普</span>
+          <h3>修复一部老电影需要多少道工序</h3>
+          <p>走进恒温库房，从胶片清洁到 AI 辅助去噪，逐步拆解修复流程，并讨论技术介入与创作者原意之间的边界。</p>
+          <div class="xf-video-foot">
+            <span class="xf-author-chip">作者：沈其</span><span>播放 1.9 万</span><span>点赞 1630</span><span>收藏 980</span>
+          </div>
+          <div class="xf-actions">
+            <button class="xf-act" data-xf-like="v3">♥ 喜欢 <b data-xf-like-count="1630">1630</b></button>
+            <button class="xf-act" data-xf-fav="v3">☆ 收藏</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="xf-video-card">
+        <div class="xf-video-thumb">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%23101729'/%3E%3Crect x='50' y='50' width='540' height='260' rx='12' fill='%230c1526' stroke='%233a4a75' stroke-width='2'/%3E%3Crect x='80' y='80' width='150' height='150' rx='8' fill='%231b2a4d'/%3E%3Ccircle cx='155' cy='140' r='34' fill='%23f97316' opacity='0.85'/%3E%3Crect x='255' y='80' width='300' height='10' rx='5' fill='%2322d3ee'/%3E%3Crect x='255' y='108' width='250' height='8' rx='4' fill='%233a4a75'/%3E%3Crect x='255' y='130' width='270' height='8' rx='4' fill='%233a4a75'/%3E%3Crect x='255' y='152' width='180' height='8' rx='4' fill='%233a4a75'/%3E%3Crect x='255' y='190' width='120' height='28' rx='14' fill='%23f97316'/%3E%3Crect x='80' y='256' width='440' height='8' rx='4' fill='%232c3a60'/%3E%3Crect x='80' y='280' width='320' height='8' rx='4' fill='%232c3a60'/%3E%3C/svg%3E"
+            alt="人物访谈视频《和策展人聊一晚：我们为什么还在做放映》封面图" width="640" height="360">
+          <div class="xf-play" aria-hidden="true"><span>▶</span></div>
+        </div>
+        <div class="xf-video-body">
+          <span class="xf-tag">人物访谈</span><span class="xf-tag">文化访谈</span>
+          <h3>和策展人聊一晚：我们为什么还在做放映</h3>
+          <p>三位独立策展人谈片源、谈观众、谈坚持。没有宏大叙事，只有真实的排片表、租金压力与被观众认出时的瞬间。</p>
+          <div class="xf-video-foot">
+            <span class="xf-author-chip">作者：林岸</span><span>播放 1.2 万</span><span>点赞 940</span><span>收藏 620</span>
+          </div>
+          <div class="xf-actions">
+            <button class="xf-act" data-xf-like="v4">♥ 喜欢 <b data-xf-like-count="940">940</b></button>
+            <button class="xf-act" data-xf-fav="v4">☆ 收藏</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="xf-video-card">
+        <div class="xf-video-thumb">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%23121d2f'/%3E%3Crect x='70' y='70' width='500' height='220' rx='12' fill='%23182236' stroke='%233a4a75' stroke-width='2'/%3E%3Crect x='100' y='100' width='120' height='120' rx='60' fill='%2322d3ee' opacity='0.2'/%3E%3Ccircle cx='160' cy='160' r='40' fill='none' stroke='%2322d3ee' stroke-width='3'/%3E%3Crect x='250' y='100' width='280' height='9' rx='4' fill='%23f97316'/%3E%3Crect x='250' y='126' width='240' height='8' rx='4' fill='%233a4a75'/%3E%3Crect x='250' y='148' width='260' height='8' rx='4' fill='%233a4a75'/%3E%3Crect x='250' y='170' width='170' height='8' rx='4' fill='%233a4a75'/%3E%3Crect x='100' y='242' width='430' height='8' rx='4' fill='%232c3a60'/%3E%3Crect x='100' y='266' width='300' height='8' rx='4' fill='%232c3a60'/%3E%3C/svg%3E"
+            alt="日常记录视频《凌晨四点的菜市场与三台相机》封面图" width="640" height="360">
+          <div class="xf-play" aria-hidden="true"><span>▶</span></div>
+        </div>
+        <div class="xf-video-body">
+          <span class="xf-tag">日常记录</span><span class="xf-tag">城市探索</span>
+          <h3>凌晨四点的菜市场与三台相机</h3>
+          <p>用三种焦段记录同一段清晨：广角交代环境，中焦捕捉动作，长焦留住表情。导演手记同步更新在作者专栏。</p>
+          <div class="xf-video-foot">
+            <span class="xf-author-chip">作者：许一苇</span><span>播放 3.6 万</span><span>点赞 2780</span><span>收藏 1440</span>
+          </div>
+          <div class="xf-actions">
+            <button class="xf-act" data-xf-like="v5">♥ 喜欢 <b data-xf-like-count="2780">2780</b></button>
+            <button class="xf-act" data-xf-fav="v5">☆ 收藏</button>
+          </div>
+        </div>
+      </article>
+
+      <article class="xf-video-card">
+        <div class="xf-video-thumb">
+          <img src="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 640 360'%3E%3Crect width='640' height='360' fill='%230d1626'/%3E%3Crect x='60' y='60' width='240' height='240' rx='10' fill='%231a2947' stroke='%233a4a75' stroke-width='2'/%3E%3Cpath d='M100 240 L140 180 L180 220 L230 140 L260 200' stroke='%23fbbf24' stroke-width='3' fill='none'/%3E%3Crect x='330' y='70' width='250' height='10' rx='5' fill='%2322d3ee'/%3E%3Crect x='330' y='98' width='200' height='8' rx='4' fill='%233a4a75'/%3E%3Crect x='330' y='120' width='220' height='8' rx='4' fill='%233a4a75'/%3E%3Crect x='330' y='142' width='160' height='8' rx='4' fill='%233a4a75'/%3E%3Crect x='330' y='186' width='120' height='26' rx='13' fill='%23f97316'/%3E%3Crect x='330' y='238' width='250' height='8' rx='4' fill='%232c3a60'/%3E%3Crect x='330' y='260' width='190' height='8' rx='4' fill='%232c3a60'/%3E%3C/svg%3E"
+            alt="行业观察视频《小成本影像如何进入院线与平台》封面图" width="640" height="360">
+          <div class="xf-play" aria-hidden="true"><span>▶</span></div>
+        </div>
+        <div class="xf-video-body">
+          <span class="xf-tag">行业观察</span><span class="xf-tag">商业观察</span>
+          <h3>小成本影像如何进入院线与平台</h3>
+          <p>从创投会到发行窗口期，梳理一条现实可行的路径。采访了两位制片人与一位平台内容采购，给出避坑清单。</p>
+          <div class="xf-video-foot">
+            <span class="xf-author-chip">作者：程叙</span><span>播放 1.5 万</span><span>点赞 1120</span><span>收藏 860</span>
+          </div>
+          <div class="xf-actions">
+            <button class="xf-act" data-xf-like="v6">♥ 喜欢 <b data-xf-like-count="1120">1120</b></button>
+            <button class="xf-act" data-xf-fav="v6">☆ 收藏</button>
+          </div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== S4 专题企划（杂志编排） ===== -->
+<section class="xf-section" id="xfMedia">
+  <div class="xf-wrap">
+    <div class="xf-section-head">
+      <div>
+        <span class="xf-kicker">Special Program</span>
+        <h2>专题企划 · 三条并行的策展线索</h2>
+        <p class="xf-sub">每个专题围绕一个具体命题展开，更新状态公开透明，片目可单独收藏。</p>
+      </div>
+    </div>
+    <div class="xf-topic-grid">
+      <article class="xf-topic">
+        <span class="xf-status">● 持续更新中</span>
+        <h3>城市夜行计划</h3>
+        <p>以夜晚为线索，串联公交末班车、便利店、天桥与地下通道。已上线 18 部片目，包含 4 部平台独家策划短片。</p>
+        <ul>
+          <li>《街角十二时》导演剪辑版</li>
+          <li>《末班车之后》三集短纪录</li>
+          <li>《便利店夜班手记》创作者联展</li>
+        </ul>
+      </article>
+      <article class="xf-topic">
+        <span class="xf-status">● 更新至第 3 期</span>
+        <h3>手艺人影像档案</h3>
+        <p>记录正在消失或正在转型的手艺。平台提供拍摄协助与版权登记指引，欢迎在地创作者投稿参与。</p>
+        <ul>
+          <li>《修表的第七十年》</li>
+          <li>《纸伞最后一道工序》</li>
+          <li>《木作师傅的工具柜》</li>
+        </ul>
+      </article>
+      <article class="xf-topic">
+        <span class="xf-status">○ 已完结 · 可回看</span>
+        <h3>老片修复观察室</h3>
+        <p>从技术流程到美学判断，讨论修复的边界。专题共 11 部片目，配套 6 篇技术说明与 2 场线上圆桌。</p>
+        <ul>
+          <li>《胶片未眠》修复全记录</li>
+          <li>《被找回的四分钟》案例复盘</li>
+          <li>《噪点该不该被抹去》圆桌实录</li>
+        </ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S6 时间线故事（品牌故事） ===== -->
+<section class="xf-section" style="padding-top:16px;">
+  <div class="xf-wrap">
+    <div class="xf-section-head">
+      <div>
+        <span class="xf-kicker">Brand Story</span>
+        <h2>品牌故事 · 一个片库如何长成社区</h2>
+        <p class="xf-sub">先锋影视资源站的关键节点，均可在企业动态与更新日志中查证。</p>
+      </div>
+    </div>
+    <div class="xf-timeline">
+      <article class="xf-tl-item">
+        <b>2019 · 起点</b>
+        <h3>从一份私人片单开始</h3>
+        <p>最初只是三位影像爱好者维护的共享表格，记录值得反复观看的片子与版本信息。表格被转发到多个社群后，团队意识到：人们真正需要的是可靠的描述与稳定的入口。</p>
+      </article>
+      <article class="xf-tl-item">
+        <b>2021 · 转型</b>
+        <h3>成立企业，确立正版优先原则</h3>
+        <p>平台完成企业化运营，建立片目核验流程与来源公示机制。同年上线创作者投稿通道，第一批 27 位作者入驻，形成早期的内容生态雏形。</p>
+      </article>
+      <article class="xf-tl-item">
+        <b>2023 · 扩展</b>
+        <h3>策展体系与专题企划上线</h3>
+        <p>推出专题企划机制，以三到五条内容组成一条可阅读的线索。年底完成片库结构重整，搜索与标签筛选的准确率显著提升，用户口碑开始稳定积累。</p>
+      </article>
+      <article class="xf-tl-item">
+        <b>2026 · 现在</b>
+        <h3>持续运营中的内容社区</h3>
+        <p>入库高清片目超过一万部，签约与入驻创作者四百余位。平台同步推进修复计划与在地影像扶持，把“值得信赖”当作长期目标而非宣传语。</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S5 创作者矩阵：双列简介 ===== -->
+<section class="xf-section" id="xfAuthors" style="background:linear-gradient(180deg,rgba(18,26,48,.55),transparent);border-top:1px solid #26314f;border-bottom:1px solid #26314f;">
+  <div class="xf-wrap">
+    <div class="xf-section-head">
+      <div>
+        <span class="xf-kicker">Creators</span>
+        <h2>创作者名录 · 六位长期合作的影像作者</h2>
+        <p class="xf-sub">点击任意作者卡片可查看完整档案。所有作者均通过平台原创认证。</p>
+      </div>
+    </div>
+    <div class="xf-author-grid">
+
+      <article class="xf-author" data-xf-open="author" data-author-name="迟野" tabindex="0" role="button">
+        <div class="xf-avatar" style="background:linear-gradient(135deg,#f97316,#fbbf24);">迟</div>
+        <div>
+          <h3>迟野 <span class="xf-tag" style="font-size:11px;">原创认证</span></h3>
+          <div class="xf-field">擅长：教程干货 / 创作幕后</div>
+          <p>独立导演，前广告剪辑师。习惯用一条完整流程讲清一件事，视频节奏偏慢但信息密度高。相信“看得懂”比“看起来厉害”更重要，长期在平台更新拍摄手记。</p>
+          <div class="xf-author-stats"><span>作品 62</span><span>关注 8.4 万</span></div>
+        </div>
+      </article>
+
+      <article class="xf-author" data-xf-open="author" data-author-name="周予安" tabindex="0" role="button">
+        <div class="xf-avatar" style="background:linear-gradient(135deg,#22d3ee,#3b82f6);">周</div>
+        <div>
+          <h3>周予安 <span class="xf-tag" style="font-size:11px;">原创认证</span></h3>
+          <div class="xf-field">擅长：深度测评 / 实用技巧</div>
+          <p>视听设备测评作者，做事讲究对照实验。视频里常见测光表、色卡与表格，结论清楚，不夸大。她坚持所有测评设备自购或长期借用，不接受品牌定制结论。</p>
+          <div class="xf-author-stats"><span>作品 48</span><span>关注 6.1 万</span></div>
+        </div>
+      </article>
+
+      <article class="xf-author" data-xf-open="author" data-author-name="沈其" tabindex="0" role="button">
+        <div class="xf-avatar" style="background:linear-gradient(135deg,#34d399,#22d3ee);">沈</div>
+        <div>
+          <h3>沈其 <span class="xf-tag" style="font-size:11px;">原创认证</span></h3>
+          <div class="xf-field">擅长：科技前沿 / 知识科普</div>
+          <p>影像修复工程师，参与过多个老片数字化项目。擅长把技术流程讲得不枯燥，也愿意讨论技术介入创作原意的边界。平台上多篇修复说明由他撰写并校对。</p>
+          <div class="xf-author-stats"><span>作品 35</span><span>关注 4.7 万</span></div>
+        </div>
+      </article>
+
+      <article class="xf-author" data-xf-open="author" data-author-name="林岸" tabindex="0" role="button">
+        <div class="xf-avatar" style="background:linear-gradient(135deg,#a855f7,#f43f5e);">林</div>
+        <div>
+          <h3>林岸 <span class="xf-tag" style="font-size:11px;">原创认证</span></h3>
+          <div class="xf-field">擅长：人物访谈 / 文化访谈</div>
+          <p>记者出身，提问直接，不追求金句。访谈多在真实工作场景中完成，画面朴素，声音清楚。她认为好的访谈应该让被访者说完一整段话，而不是被剪成碎片。</p>
+          <div class="xf-author-stats"><span>作品 57</span><span>关注 7.3 万</span></div>
+        </div>
+      </article>
+
+      <article class="xf-author" data-xf-open="author" data-author-name="许一苇" tabindex="0" role="button">
+        <div class="xf-avatar" style="background:linear-gradient(135deg,#fbbf24,#f97316);">许</div>
+        <div>
+          <h3>许一苇 <span class="xf-tag" style="font-size:11px;">原创认证</span></h3>
+          <div class="xf-field">擅长：日常记录 / 城市探索</div>
+          <p>街头摄影师转做短片，习惯随身带三台相机。作品多为无旁白记录，靠环境声与构图叙事。她在平台连载的“城市清晨”系列已更新到第二十二期。</p>
+          <div class="xf-author-stats"><span>作品 84</span><span>关注 11.2 万</span></div>
+        </div>
+      </article>
+
+      <article class="xf-author" data-xf-open="author" data-author-name="程叙" tabindex="0" role="button">
+        <div class="xf-avatar" style="background:linear-gradient(135deg,#3b82f6,#22d3ee);">程</div>
+        <div>
+          <h3>程叙 <span class="xf-tag" style="font-size:11px;">原创认证</span></h3>
+          <div class="xf-field">擅长：行业观察 / 商业观察</div>
+          <p>影视行业观察者，做过发行与内容采购。擅长把复杂的产业环节拆成可理解的步骤，文章与视频互为补充。他坚持数据必须标注来源，观点与事实分开陈述。</p>
+          <div class="xf-author-stats"><span>作品 41</span><span>关注 5.6 万</span></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== S6 数据榜单 ===== -->
+<section class="xf-section">
+  <div class="xf-wrap">
+    <div class="xf-section-head">
+      <div>
+        <span class="xf-kicker">Ranking</span>
+        <h2>热度榜 · 本周观众用观看时间投票</h2>
+        <p class="xf-sub">统计周期为最近七天，数据来自站内播放与收藏行为，每日更新一次。</p>
+      </div>
+    </div>
+    <div class="xf-rank">
+      <div class="xf-rank-row">
+        <span class="xf-rank-no">01</span>
+        <div><h4>《街角十二时》导演剪辑版</h4><span class="xf-rank-sub">城市探索 · 96 分钟</span></div>
+        <div class="xf-bar"><i style="width:96%"></i></div>
+        <span class="xf-rank-val">96 分</span>
+      </div>
+      <div class="xf-rank-row">
+        <span class="xf-rank-no">02</span>
+        <div><h4>一条片子的诞生：从脚本到成片</h4><span class="xf-rank-sub">教程干货 · 28 分钟</span></div>
+        <div class="xf-bar"><i style="width:89%"></i></div>
+        <span class="xf-rank-val">89 分</span>
+      </div>
+      <div class="xf-rank-row">
+        <span class="xf-rank-no">03</span>
+        <div><h4>凌晨四点的菜市场与三台相机</h4><span class="xf-rank-sub">日常记录 · 21 分钟</span></div>
+        <div class="xf-bar"><i style="width:84%"></i></div>
+        <span class="xf-rank-val">84 分</span>
+      </div>
+      <div class="xf-rank-row">
+        <span class="xf-rank-no">04</span>
+        <div><h4>修复一部老电影需要多少道工序</h4><span class="xf-rank-sub">科技前沿 · 34 分钟</span></div>
+        <div class="xf-bar"><i style="width:78%"></i></div>
+        <span class="xf-rank-val">78 分</span>
+      </div>
+      <div class="xf-rank-row">
+        <span class="xf-rank-no">05</span>
+        <div><h4>和策展人聊一晚：我们为什么还在做放映</h4><span class="xf-rank-sub">人物访谈 · 52 分钟</span></div>
+        <div class="xf-bar"><i style="width:72%"></i></div>
+        <span class="xf-rank-val">72 分</span>
+      </div>
+      <div class="xf-rank-row">
+        <span class="xf-rank-no">06</span>
+        <div><h4>小成本影像如何进入院线与平台</h4><span class="xf-rank-sub">行业观察 · 44 分钟</span></div>
+        <div class="xf-bar"><i style="width:66%"></i></div>
+        <span class="xf-rank-val">66 分</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S6 用户评价：双列短评 ===== -->
+<section class="xf-section" id="xfReviews" style="padding-top:16px;">
+  <div class="xf-wrap">
+    <div class="xf-section-head">
+      <div>
+        <span class="xf-kicker">Reviews</span>
+        <h2>用户评价 · 来自社区的八种声音</h2>
+        <p class="xf-sub">评价不做删改，仅隐藏涉及个人隐私的内容。欢迎在评论区留下你的具体意见。</p>
+      </div>
+    </div>
+    <div class="xf-review-grid">
+      <article class="xf-review">
+        <div class="xf-stars">★★★★★</div>
+        <p>片目信息写得很实，尤其版本说明和字幕情况，看之前就能判断适不适合自己。这点比很多同类站点用心得多。</p>
+        <div class="xf-review-who"><span class="xf-review-ava" style="background:#f97316;">陈</span> 陈默 · 影视教师</div>
+      </article>
+      <article class="xf-review">
+        <div class="xf-stars">★★★★☆</div>
+        <p>专题企划是我留在这里的原因。一次能顺着一条线索看完几部片子，比自己瞎找效率高。希望以后多做点修复主题。</p>
+        <div class="xf-review-who"><span class="xf-review-ava" style="background:#22d3ee;">吴</span> 吴青 · 自由摄影</div>
+      </article>
+      <article class="xf-review">
+        <div class="xf-stars">★★★★★</div>
+        <p>投稿流程比想象中顺，权属声明和转码规范都写清楚了，按攻略走一遍基本没返工。作为创作者，省下来的时间很实在。</p>
+        <div class="xf-review-who"><span class="xf-review-ava" style="background:#34d399;">苏</span> 苏行 · 短片作者</div>
+      </article>
+      <article class="xf-review">
+        <div class="xf-stars">★★★☆☆</div>
+        <p>内容质量没得说，就是有些冷门片目的简介可以再长一点。我常常要点进两三个页面才能判断要不要看，稍微有点费劲。</p>
+        <div class="xf-review-who"><span class="xf-review-ava" style="background:#a855f7;">何</span> 何遇 · 资深影迷</div>
+      </article>
+      <article class="xf-review">
+        <div class="xf-stars">★★★★★</div>
+        <p>晚上陪孩子一起看了一部手艺人纪录片，画面干净，没有多余的煽情。这种克制很难得，第二天他还在问我修表的事。</p>
+        <div class="xf-review-who"><span class="xf-review-ava" style="background:#fbbf24;">梁</span> 梁辰 · 两个孩子的父亲</div>
+      </article>
+      <article class="xf-review">
+        <div class="xf-stars">★★★★☆</div>
+        <p>搜索功能好用，标签筛选也准。提个小建议：希望收藏夹能按专题分组，我现在收藏了七十多部，翻起来有点乱。</p>
+        <div class="xf-review-who"><span class="xf-review-ava" style="background:#3b82f6;">陆</span> 陆知 · 产品经理</div>
+      </article>
+      <article class="xf-review">
+        <div class="xf-stars">★★★★★</div>
+        <p>在平台看了修复主题之后，专门去查了资料。能把技术讲清楚又不卖弄，是真的花了心思。希望修复计划一直做下去。</p>
+        <div class="xf-review-who"><span class="xf-review-ava" style="background:#f43f5e;">谈</span> 谈晓 · 大学讲师</div>
+      </article>
+      <article class="xf-review">
+        <div class="xf-stars">★★★★☆</div>
+        <p>创作者访谈系列很好，问题不飘。就是更新慢了点，一期要等好久。不过慢工出细活，我认。</p>
+        <div class="xf-review-who"><span class="xf-review-ava" style="background:#22d3ee;">钟</span> 钟野 · 编剧</div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S7 企业动态 ===== -->
+<section class="xf-section" style="padding-top:16px;">
+  <div class="xf-wrap">
+    <div class="xf-section-head">
+      <div>
+        <span class="xf-kicker">Newsroom</span>
+        <h2>企业动态 · 官方发布的近期更新</h2>
+        <p class="xf-sub">所有更新以本栏目为准，历史记录可在更新日志中回溯。</p>
+      </div>
+    </div>
+    <div class="xf-news">
+      <article class="xf-news-item">
+        <time datetime="2026-11-22">2026-11-22</time>
+        <div>
+          <h3>《街角十二时》导演剪辑版正式上线</h3>
+          <p>同步开放主创访谈与分镜手稿下载，剪辑版补回两场长镜头，片长由 88 分钟调整为 96 分钟。</p>
+        </div>
+      </article>
+      <article class="xf-news-item">
+        <time datetime="2026-11-15">2026-11-15</time>
+        <div>
+          <h3>冬季城市影像特辑片单发布</h3>
+          <p>42 部片目按情绪分组，附观看顺序建议。专题页支持一键收藏整组片单。</p>
+        </div>
+      </article>
+      <article class="xf-news-item">
+        <time datetime="2026-11-06">2026-11-06</time>
+        <div>
+          <h3>创作者扶持计划第四期开放申报</h3>
+          <p>面向在地影像与手艺人纪录方向，提供拍摄协助、版权登记指引与专题曝光位。申报截止 12 月 20 日。</p>
+        </div>
+      </article>
+      <article class="xf-news-item">
+        <time datetime="2026-10-28">2026-10-28</time>
+        <div>
+          <h3>片目核验流程升级，来源公示更清晰</h3>
+          <p>详情页新增版本对照与字幕信息说明，举报反馈通道响应速度同步提升。</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S7 合作品牌 ===== -->
+<section class="xf-section" style="padding-top:16px;">
+  <div class="xf-wrap">
+    <div class="xf-section-head">
+      <div>
+        <span class="xf-kicker">Partners</span>
+        <h2>合作品牌 · 一起把内容做扎实</h2>
+        <p class="xf-sub">以下机构与先锋影视资源站在片目授权、修复计划与青年影像扶持方面保持合作。</p>
+      </div>
+    </div>
+    <div class="xf-partners">
+      <div class="xf-partner"><b>拾光影像馆</b><span>修复计划合作</span></div>
+      <div class="xf-partner"><b>南巷制片</b><span>片目授权合作</span></div>
+      <div class="xf-partner"><b>看见放映社</b><span>线下放映合作</span></div>
+      <div class="xf-partner"><b>青禾文教</b><span>青年影像扶持</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== S7 FAQ ===== -->
+<section class="xf-section" id="xfFaq" style="padding-top:16px;">
+  <div class="xf-wrap">
+    <div class="xf-section-head">
+      <div>
+        <span class="xf-kicker">FAQ</span>
+        <h2>常见问题 · 关于官网使用的六个答案</h2>
+        <p class="xf-sub">如果你还有其他问题，可以通过页脚的联系方式或投稿入口与我们沟通。</p>
+      </div>
+    </div>
+    <div class="xf-faq">
+      <details>
+        <summary>平台的片目来源如何保证正规？</summary>
+        <p>片目入库前需提供来源说明与权属材料，公开授权的作品优先收录。详情页会展示版本与来源信息，如发现权属问题可通过举报反馈通道提交，平台会在合理时限内核查并处理。</p>
+      </details>
+      <details>
+        <summary>我可以把自己拍的片子投稿到先锋影视资源站吗？</summary>
+        <p>可以。点击页面上的“投稿 / 上传作品”入口，填写作品信息并完成权属声明即可。平台提供转码建议、封面尺寸与字幕规范的公开攻略，减少返工。审核通过后会安排专题曝光位。</p>
+      </details>
+      <details>
+        <summary>为什么有些片目只有文字介绍，没有封面图？</summary>
+        <p>封面图涉及版权与素材授权，部分片目暂时只提供文字索引。我们会在获得授权后补充视觉信息，保证信息准确优先于视觉完整。</p>
+      </details>
+      <details>
+        <summary>高清版本和普通版本有什么区别？</summary>
+        <p>高清版本在码率稳定性、音画同步与字幕呈现上按统一规范处理，适配大屏观看。普通版本体积更小，适合移动端观看。两者内容一致，仅技术参数不同。</p>
+      </details>
+      <details>
+        <summary>创作者扶持计划如何申报？</summary>
+        <p>每季度开放一次申报，需提交作品链接、创作计划与预算说明。通过初审后会有一次线上沟通，重点评估题材方向与完成度。往期入选者可在作者名录中查看。</p>
+      </details>
+      <details>
+        <summary>社区评论有哪些规则？</summary>
+        <p>欢迎具体、有建设性的意见，反对人身攻击、恶意刷评与剧透未标注。涉及隐私或侵权的内容会被隐藏处理。规则细则可在页脚“社区公约”中查阅。</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ===== S8 页脚 ===== -->
+<footer class="xf-footer">
+  <div class="xf-wrap">
+    <div class="xf-foot-grid">
+      <div>
+        <div class="xf-brand" style="margin-bottom:12px;">
+          <span class="xf-brand-mark">▶</span>
+          <span>先锋影视资源站<small>Pioneer Film &amp; Video</small></span>
+        </div>
+        <p style="font-size:13.2px;color:#8494b8;max-width:280px;">先锋影视资源站官方网站 · 持续运营的影视内容企业与社区平台。我们以正版高清片目为基础，以原创影像为延伸，深耕影视垂直领域，与创作者一起维护值得信赖的内容生态。</p>
+      </div>
+      <div>
+        <h4>内容导航</h4>
+        <ul>
+          <li><a href="#xfFocus">焦点内容</a></li>
+          <li><a href="#xfVideos">视频精选</a></li>
+          <li><a href="#xfMedia">专题企划</a></li>
+          <li><a href="#xfAuthors">创作者名录</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>关于我们</h4>
+        <ul>
+          <li><a href="#xfAbout">关键词解析</a></li>
+          <li><a href="#xfFaq">常见问题</a></li>
+          <li><a href="#xfReviews">用户评价</a></li>
+          <li><a href="#xfVideos">企业动态</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>联系与参与</h4>
+        <ul>
+          <li>合作邮箱：hello@pioneer-film.example</li>
+          <li>投稿通道：页面入口在线提交</li>
+          <li>社区公约：理性讨论，尊重创作</li>
+          <li><button class="xf-act" data-xf-open="submit" style="margin-top:4px;">我要投稿</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="xf-foot-bottom">
+      <span>© 2026 先锋影视资源站 版权所有 · 官方网站 · 持续运营中</span>
+      <span>备案号：影字备 2026-0118 号 · 内容以官网发布为准</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== 弹窗 ===== -->
+<div class="xf-modal" id="xfModalSubmit" aria-hidden="true">
+  <div class="xf-modal-box" role="dialog" aria-modal="true" aria-labelledby="xfModalSubmitTitle">
+    <button class="xf-modal-close" data-xf-close aria-label="关闭">×</button>
+    <h3 id="xfModalSubmitTitle">投稿 / 上传作品</h3>
+    <p style="color:#9aa7c7;font-size:13.6px;">填写作品基本信息，平台会在三个工作日内通过邮件回复初审意见。请确保内容为本人原创或已获得授权。</p>
+    <input type="text" placeholder="作品名称" aria-label="作品名称">
+    <input type="text" placeholder="作者昵称" aria-label="作者昵称">
+    <textarea placeholder="用两三句话介绍你的作品与创作意图…" aria-label="作品介绍"></textarea>
+    <button class="xf-btn xf-btn-primary" id="xfSubmitBtn">提交初审</button>
+  </div>
+</div>
+
+<div class="xf-modal" id="xfModalAuthor" aria-hidden="true">
+  <div class="xf-modal-box" role="dialog" aria-modal="true" aria-labelledby="xfModalAuthorTitle">
+    <button class="xf-modal-close" data-xf-close aria-label="关闭">×</button>
+    <h3 id="xfModalAuthorTitle">创作者档案</h3>
+    <p id="xfModalAuthorBody" style="color:#9aa7c7;font-size:13.8px;"></p>
+    <p style="font-size:13.2px;color:#8494b8;">该创作者通过平台原创认证，作品可在视频精选与专题企划中查看。</p>
+    <button class="xf-btn xf-btn-ghost" data-xf-close>返回页面</button>
+  </div>
+</div>
+
+<div class="xf-modal" id="xfModalShare" aria-hidden="true">
+  <div class="xf-modal-box" role="dialog" aria-modal="true" aria-labelledby="xfModalShareTitle">
+    <button class="xf-modal-close" data-xf-close aria-label="关闭">×</button>
+    <h3 id="xfModalShareTitle">分享给同好</h3>
+    <p style="color:#9aa7c7;font-size:13.6px;">把这一页分享给一起看片的朋友，或复制链接保存到自己的收藏里。</p>
+    <button class="xf-btn xf-btn-primary" id="xfCopyLink">复制页面链接</button>
+    <p style="font-size:12.6px;color:#6d7ba0;margin-top:14px;">也支持直接转发到微信、微博等常用社交平台。</p>
+  </div>
+</div>
+
+<div class="xf-toast" id="xfToast" role="status" aria-live="polite"></div>
+<button class="xf-top" id="xfTop" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  "use strict";
+
+  /* ---------- 移动端导航 ---------- */
+  var burger = document.getElementById('xfBurger');
+  var nav = document.getElementById('xfNav');
+  burger.addEventListener('click', function(){
+    var open = nav.classList.toggle('xf-open');
+    burger.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A' && window.innerWidth <= 760){
+      nav.classList.remove('xf-open');
+      burger.setAttribute('aria-expanded','false');
+    }
+  });
+
+  /* ---------- Toast ---------- */
+  var toast = document.getElementById('xfToast');
+  var toastTimer = null;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('xf-show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('xf-show'); }, 2200);
+  }
+
+  /* ---------- 搜索提示/筛选反馈 ---------- */
+  var search = document.getElementById('xfSearch');
+  var hint = document.getElementById('xfSearchHint');
+  var searchIndex = [
+    {t:'街角十二时', k:'城市探索 / 焦点首映'},
+    {t:'一条片子的诞生', k:'教程干货 / 创作幕后'},
+    {t:'修复一部老电影', k:'科技前沿 / 知识科普'},
+    {t:'凌晨四点的菜市场', k:'日常记录 / 城市探索'},
+    {t:'和策展人聊一晚', k:'人物访谈 / 文化访谈'},
+    {t:'小成本影像', k:'行业观察 / 商业观察'},
+    {t:'家庭投影与显示器', k:'深度测评 / 实用技巧'},
+    {t:'城市夜行计划', k:'专题企划'},
+    {t:'手艺人影像档案', k:'专题企划'},
+    {t:'老片修复观察室', k:'专题企划'}
+  ];
+  function doSearch(){
+    var q = search.value.trim();
+    if(!q){ hint.classList.remove('xf-show'); hint.innerHTML=''; return; }
+    var res = searchIndex.filter(function(item){
+      return item.t.indexOf(q) > -1 || item.k.indexOf(q) > -1;
+    }).slice(0,4);
+    if(res.length){
+      hint.innerHTML = '找到 ' + res.length + ' 条相关内容：<br>' + res.map(function(r){
+        return '· <b>' + r.t + '</b> <span style="color:#7d8cb0">' + r.k + '</span>';
+      }).join('<br>');
+    }else{
+      hint.innerHTML = '暂无与 <b>' + q + '</b> 匹配的片目，试试「修复」「城市」或「访谈」等关键词。';
+    }
+    hint.classList.add('xf-show');
+  }
+  search.addEventListener('input', doSearch);
+  search.addEventListener('focus', function(){ if(search.value.trim()) doSearch(); });
+  document.addEventListener('click', function(e){
+    if(!e.target.closest('.xf-search')){ hint.classList.remove('xf-show'); }
+  });
+
+  /* ---------- 点赞 ---------- */
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('[data-xf-like]');
+    if(!btn) return;
+    var countEl = btn.querySelector('[data-xf-like-count]');
+    var n = parseInt(countEl.getAttribute('data-xf-like-count'), 10);
+    var on = btn.classList.toggle('xf-on');
+    if(on){ n += 1; btn.querySelector('span').textContent = '♥ 已喜欢'; }
+    else { n -= 1; btn.querySelector('span').textContent = '♥ 喜欢'; }
+    countEl.textContent = n;
+    countEl.setAttribute('data-xf-like-count', n);
+    showToast(on ? '已加入喜欢' : '已取消喜欢');
+  });
+
+  /* ---------- 收藏 ---------- */
+  document.addEventListener('click', function(e){
+    var btn = e.target.closest('[data-xf-fav]');
+    if(!btn) return;
+    var on = btn.classList.toggle('xf-on');
+    btn.textContent = on ? '★ 已收藏' : '☆ 收藏';
+    showToast(on ? '已收藏到个人片单' : '已取消收藏');
+  });
+
+  /* ---------- 弹窗 ---------- */
+  var modals = {
+    submit: document.getElementById('xfModalSubmit'),
+    author: document.getElementById('xfModalAuthor'),
+    share: document.getElementById('xfModalShare')
+  };
+  var currentModal = null;
+  function openModal(key, payload){
+    var m = modals[key];
+    if(!m) return;
+    if(key === 'author' && payload){
+      document.getElementById('xfModalAuthorTitle').textContent = payload + ' · 创作者档案';
+      document.getElementById('xfModalAuthorBody').textContent =
+        payload + ' 是平台原创认证作者，作品长期在先锋影视资源站更新。擅长以具体的现场与细节展开叙事，强调信息准确与观看体验。';
+    }
+    m.classList.add('xf-show');
+    m.setAttribute('aria-hidden','false');
+    currentModal = m;
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(){
+    if(!currentModal) return;
+    currentModal.classList.remove('xf-show');
+    currentModal.setAttribute('aria-hidden','true');
+    currentModal = null;
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('click', function(e){
+    var opener = e.target.closest('[data-xf-open]');
+    if(opener){
+      var key = opener.getAttribute('data-xf-open');
+      openModal(key, opener.getAttribute('data-author-name'));
+      return;
+    }
+    if(e.target.closest('[data-xf-close]')){ closeModal(); return; }
+    if(e.target.classList && e.target.classList.contains('xf-modal')){ closeModal(); }
+  });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape') closeModal();
+    var card = document.activeElement;
+    if((e.key === 'Enter' || e.key === ' ') && card && card.classList && card.classList.contains('xf-author')){
+      e.preventDefault();
+      openModal('author', card.getAttribute('data-author-name'));
+    }
+  });
+
+  /* ---------- 投稿提交 ---------- */
+  var submitBtn = document.getElementById('xfSubmitBtn');
+  submitBtn.addEventListener('click', function(){
+    showToast('作品信息已记录，初审结果将通过邮件回复');
+    closeModal();
+  });
+
+  /* ---------- 复制链接 ---------- */
+  var copyBtn = document.getElementById('xfCopyLink');
+  copyBtn.addEventListener('click', function(){
+    var text = '先锋影视资源站 · 官方网站，一起看值得认真看完的片子。';
+    function done(){ showToast('链接说明已复制'); closeModal(); }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try{ document.execCommand('copy'); }catch(err){}
+      document.body.removeChild(ta);
+      done();
+    }
+    if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(text).then(done).catch(fallback);
+    }else{
+      fallback();
+    }
+  });
+
+  /* ---------- 数字滚动 ---------- */
+  var counters = document.querySelectorAll('[data-xf-count]');
+  function animateCount(el){
+    var target = parseInt(el.getAttribute('data-xf-count'), 10);
+    var start = null;
+    var dur = 1100;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.floor(target * eased).toLocaleString('zh-CN');
+      if(p < 1) requestAnimationFrame(step);
+      else el.textContent = target.toLocaleString('zh-CN');
+    }
+    requestAnimationFrame(step);
+  }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(en){
+        if(en.isIntersecting){ animateCount(en.target); io.unobserve(en.target); }
+      });
+    }, {threshold:.4});
+    counters.forEach(function(c){ io.observe(c); });
+  }else{
+    counters.forEach(animateCount);
+  }
+
+  /* ---------- 回到顶部 ---------- */
+  var topBtn = document.getElementById('xfTop');
+  window.addEventListener('scroll', function(){
+    if(window.scrollY > 600) topBtn.classList.add('xf-show');
+    else topBtn.classList.remove('xf-show');
+  }, {passive:true});
+  topBtn.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+})();
+</script>
+</body>
+  </html>
